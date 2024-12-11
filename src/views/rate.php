@@ -40,7 +40,7 @@
         <?php
         $tweetText = "I've rated 🎺 Trumpet Framework with {$data['rating']}/5 ⭐! {$data['liked_features']}";
         $encodedText = urlencode($tweetText);
-        $tweetUrl = "https://twitter.com/intent/tweet?text={$encodedText}&url=https://github.com/devjoseruiz/trumpet-mvc-framework";
+        $tweetUrl = "https://twitter.com/intent/tweet?text={$encodedText}&url=https://github.com/devjoseruiz/trumpet";
         ?>
 
         <div class="quote-container">
@@ -57,7 +57,7 @@
             <p class="quote-text"><?= $data['improvements'] ?></p>
         </div>
 
-        <a href="https://github.com/devjoseruiz/trumpet-mvc-framework/issues" class="github-issues-button" target="_blank"
+        <a href="https://github.com/devjoseruiz/trumpet/issues" class="github-issues-button" target="_blank"
             rel="noopener noreferrer">
             ⚠️ Open issue
         </a>

@@ -24,7 +24,7 @@
                     <a class="nav-link" href="/rate">⭐ Rate</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/devjoseruiz/trumpet-mvc-framework" target="_blank">🍴
+                    <a class="nav-link" href="https://github.com/devjoseruiz/trumpet" target="_blank">🍴
                         Fork</a>
                 </li>
                 <li class="nav-item nav-separator"></li>
@@ -69,7 +69,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&#127279; <?php echo date('Y'); ?> <a href="https://github.com/devjoseruiz/trumpet-mvc-framework"
+            <p>&#127279; <?php echo date('Y'); ?> <a href="https://github.com/devjoseruiz/trumpet"
                     target="_blank">Trumpet MVC Framework</a>.</p>
         </div>
     </footer>
