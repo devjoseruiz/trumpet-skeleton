@@ -1,0 +1,19 @@
+{
+    "name": "devjoseruiz/trumpet-mvc-framework-skeleton",
+    "description": "Skeleton project for Trumpet MVC Framework",
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.0",
+        "vlucas/phpdotenv": "^5.6",
+        "devjoseruiz/trumpet": "dev-master"
+    },
+    "config": {
+        "vendor-dir": "./vendor"
+    }
+}

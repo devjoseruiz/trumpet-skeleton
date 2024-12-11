@@ -1,0 +1,68 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: trumpet-php
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    environment:
+      - PHP_MEMORY_LIMIT=512M
+      - XDEBUG_MODE=debug
+      - XDEBUG_CLIENT_HOST=host.docker.internal
+      - XDEBUG_CLIENT_PORT=9003
+      - XDEBUG_START_WITH_REQUEST=yes
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - trumpet-network
+
+  nginx:
+    image: nginx:latest
+    container_name: trumpet-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - php
+    networks:
+      - trumpet-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: trumpet-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: trumpet_db
+      MYSQL_USER: trumpet_user
+      MYSQL_PASSWORD: trumpet_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - trumpet-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: trumpet-phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: rootpass
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql
+    networks:
+      - trumpet-network
+
+networks:
+  trumpet-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
