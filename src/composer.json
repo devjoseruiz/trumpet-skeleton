@@ -1,5 +1,5 @@
 {
-    "name": "devjoseruiz/trumpet-mvc-framework-skeleton",
+    "name": "devjoseruiz/trumpet-skeleton",
     "description": "Skeleton project for Trumpet MVC Framework",
     "license": "GPL-3.0-or-later",
     "autoload": {
